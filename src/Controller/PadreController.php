@@ -20,7 +20,6 @@ class PadreController extends AbstractController
      */
     public function index(PadreRepository $padreRepository): Response
     {
-        dd($padreRepository->findAll());
         return $this->render('padre/index.html.twig', [
             'padres' => $padreRepository->findAll(),
         ]);
