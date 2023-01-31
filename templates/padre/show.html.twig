@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Padre{% endblock %}
+
+{% block body %}
+    <h1>Padre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ padre.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ padre.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Edad</th>
+                <td>{{ padre.edad }}</td>
+            </tr>
+
+            {% if padre.getClassName() == "Hija" %}
+            <tr>
+                <th>Muniecas</th>
+                <td>{{ padre.muniecas }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <th>Pelotas</th>
+                <td>{{ padre.pelotas }}</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_padre_index') }}">back to list</a>
+
+    <a href="{{ path('app_padre_edit', {'id': padre.id}) }}">edit</a>
+
+    {{ include('padre/_delete_form.html.twig') }}
+{% endblock %}

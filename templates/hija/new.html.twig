@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Hija{% endblock %}
+
+{% block body %}
+    <h1>Create new Hija</h1>
+
+    {{ include('hija/_form.html.twig') }}
+
+    <a href="{{ path('app_hija_index') }}">back to list</a>
+{% endblock %}

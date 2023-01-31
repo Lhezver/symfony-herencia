@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hijo index{% endblock %}
+
+{% block body %}
+    <h1>Hijo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Pelotas</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hijo in hijos %}
+            <tr>
+                <td>{{ hijo.id }}</td>
+                <td>{{ hijo.nombre }}</td>
+                <td>{{ hijo.edad }}</td>
+                <td>{{ hijo.pelotas }}</td>
+                <td>
+                    <a href="{{ path('app_hijo_show', {'id': hijo.id}) }}">show</a>
+                    <a href="{{ path('app_hijo_edit', {'id': hijo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_hijo_new') }}">Create new</a>
+{% endblock %}

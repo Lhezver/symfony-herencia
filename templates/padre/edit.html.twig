@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Padre{% endblock %}
+
+{% block body %}
+    <h1>Edit Padre</h1>
+
+    {{ include('padre/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_padre_index') }}">back to list</a>
+
+    {{ include('padre/_delete_form.html.twig') }}
+{% endblock %}

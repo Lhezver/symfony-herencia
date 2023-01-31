@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hija{% endblock %}
+
+{% block body %}
+    <h1>Hija</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ hija.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ hija.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Edad</th>
+                <td>{{ hija.edad }}</td>
+            </tr>
+            <tr>
+                <th>Muniecas</th>
+                <td>{{ hija.muniecas }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_hija_index') }}">back to list</a>
+
+    <a href="{{ path('app_hija_edit', {'id': hija.id}) }}">edit</a>
+
+    {{ include('hija/_delete_form.html.twig') }}
+{% endblock %}

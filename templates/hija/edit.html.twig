@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Hija{% endblock %}
+
+{% block body %}
+    <h1>Edit Hija</h1>
+
+    {{ include('hija/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_hija_index') }}">back to list</a>
+
+    {{ include('hija/_delete_form.html.twig') }}
+{% endblock %}
